@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Trainer Mathematik</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Mathetrainer für www.nachhilfe-ehrang.de</h1>
+      <p>
+        Übe das Erweitern und Kürzen von Brüchen sowie das große Einmaleins.
+        Wähle eine Aufgabe, trage deine Lösung ein und prüfe sofort, ob du
+        richtig gerechnet hast.
+      </p>
+    </header>
+
+    <main class="trainer-grid">
+      <section class="trainer-card" aria-labelledby="extend-title">
+        <h2 id="extend-title">Brüche erweitern</h2>
+        <p class="trainer-description">
+          Multipliziere Zähler und Nenner mit dem angegebenen Faktor. Gib den
+          neuen Bruch vollständig ein.
+        </p>
+        <div class="task" id="extend-task" aria-live="polite"></div>
+        <div class="input-row">
+          <label class="input-label" for="extend-numerator">Zähler</label>
+          <input
+            type="number"
+            inputmode="numeric"
+            id="extend-numerator"
+            class="trainer-input"
+            aria-describedby="extend-feedback"
+          />
+          <span class="fraction-separator">/</span>
+          <label class="input-label" for="extend-denominator">Nenner</label>
+          <input
+            type="number"
+            inputmode="numeric"
+            id="extend-denominator"
+            class="trainer-input"
+            aria-describedby="extend-feedback"
+          />
+        </div>
+        <div class="button-row">
+          <button type="button" class="primary" id="extend-check">Antwort prüfen</button>
+          <button type="button" class="ghost" id="extend-new">Neue Aufgabe</button>
+        </div>
+        <p class="feedback" id="extend-feedback" role="status"></p>
+        <p class="score" id="extend-score"></p>
+      </section>
+
+      <section class="trainer-card" aria-labelledby="reduce-title">
+        <h2 id="reduce-title">Brüche kürzen</h2>
+        <p class="trainer-description">
+          Vereinfache den angezeigten Bruch vollständig. Achte darauf, dass sich
+          Zähler und Nenner nicht weiter kürzen lassen.
+        </p>
+        <div class="task" id="reduce-task" aria-live="polite"></div>
+        <div class="input-row">
+          <label class="input-label" for="reduce-numerator">Zähler</label>
+          <input
+            type="number"
+            inputmode="numeric"
+            id="reduce-numerator"
+            class="trainer-input"
+            aria-describedby="reduce-feedback"
+          />
+          <span class="fraction-separator">/</span>
+          <label class="input-label" for="reduce-denominator">Nenner</label>
+          <input
+            type="number"
+            inputmode="numeric"
+            id="reduce-denominator"
+            class="trainer-input"
+            aria-describedby="reduce-feedback"
+          />
+        </div>
+        <div class="button-row">
+          <button type="button" class="primary" id="reduce-check">Antwort prüfen</button>
+          <button type="button" class="ghost" id="reduce-new">Neue Aufgabe</button>
+        </div>
+        <p class="feedback" id="reduce-feedback" role="status"></p>
+        <p class="score" id="reduce-score"></p>
+      </section>
+
+      <section class="trainer-card" aria-labelledby="times-title">
+        <h2 id="times-title">Großes Einmaleins</h2>
+        <p class="trainer-description">
+          Übe Multiplikationsaufgaben mit Zahlen von 6 bis 20. Gib das Produkt
+          ein und überprüfe deine Antwort.
+        </p>
+        <div class="task" id="times-task" aria-live="polite"></div>
+        <div class="input-row">
+          <label class="input-label" for="times-answer">Ergebnis</label>
+          <input
+            type="number"
+            inputmode="numeric"
+            id="times-answer"
+            class="trainer-input"
+            aria-describedby="times-feedback"
+          />
+        </div>
+        <div class="button-row">
+          <button type="button" class="primary" id="times-check">Antwort prüfen</button>
+          <button type="button" class="ghost" id="times-new">Neue Aufgabe</button>
+        </div>
+        <p class="feedback" id="times-feedback" role="status"></p>
+        <p class="score" id="times-score"></p>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>
+        Tipp: Arbeite regelmäßig mit dem Trainer, um deine Rechenfertigkeiten zu
+        festigen. Viel Erfolg!
+      </p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

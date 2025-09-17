@@ -1,0 +1,228 @@
+:root {
+  color-scheme: light;
+  --background: #f2f5fa;
+  --surface: #ffffff;
+  --primary: #275dad;
+  --primary-dark: #1e4c8e;
+  --text: #1b1d22;
+  --muted: #4c5360;
+  --success: #237a57;
+  --error: #c7362d;
+  --border: #d5dbe6;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Fira Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  background: linear-gradient(180deg, var(--background) 0%, #e2e7f1 100%);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header,
+.page-footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.8rem, 2.4vw, 2.4rem);
+  color: var(--primary);
+}
+
+.page-header p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.trainer-grid {
+  width: min(960px, 100%);
+  margin: 0 auto;
+  padding: 1rem 1.5rem 3rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 960px) {
+  .trainer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.trainer-card {
+  background: var(--surface);
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(39, 93, 173, 0.08);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid var(--border);
+}
+
+.trainer-card h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--primary-dark);
+}
+
+.trainer-description {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  min-height: 3.6em;
+}
+
+.task {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: rgba(39, 93, 173, 0.08);
+  color: var(--primary-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.task-text {
+  width: 100%;
+}
+
+.factor-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.85rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 10px 20px rgba(39, 93, 173, 0.15);
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.trainer-input {
+  width: 90px;
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.trainer-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(39, 93, 173, 0.18);
+}
+
+.fraction-separator {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.button-row {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 999px;
+  padding: 0.55rem 1.35rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button.primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 12px 25px rgba(39, 93, 173, 0.3);
+}
+
+button.primary:hover,
+button.primary:focus-visible {
+  background: var(--primary-dark);
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(39, 93, 173, 0.3);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.feedback {
+  min-height: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.feedback.success {
+  color: var(--success);
+}
+
+.feedback.error {
+  color: var(--error);
+}
+
+.score {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.page-footer {
+  font-size: 0.95rem;
+  color: var(--muted);
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.page-footer p {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .trainer-input {
+    width: 80px;
+  }
+}
